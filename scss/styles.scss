@@ -1,0 +1,158 @@
+$white: #FFFFFF;
+$black: #000000;
+$nav-font: 600;
+$font: Poppins sans-serif;
+
+body {
+  position: relative;
+  background: $white;
+  padding: 40px;
+  font-family: $font;
+}
+
+nav {
+  font-weight: $nav-font;
+  display: flex;
+  align-items: center;
+  padding: 1px 139px 55px 63px;
+}
+
+.about-section {
+  display: flex;
+  margin-left: 123px;
+
+  a {
+    text-decoration: none;
+    color: $black;
+    margin: 12px;
+  }
+}
+
+.account-section {
+  display: flex;
+  margin-left: 177px;
+
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.vertical-line {
+  color: #DAD8D8;
+  margin: 0 30px 0 30px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 63px
+  }
+}
+
+.phone-logo img {
+  margin-right: 5px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 89px 0 63px;
+}
+
+.top-section-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #2E2E2E;
+  padding-top: 25px;
+}
+
+.top-section-content {
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  color: #808080;
+  margin-right: 150px;
+  padding-top: 24px;
+}
+
+.top-section-content-body {
+  padding: 27px 95px 43px 0;
+  letter-spacing: 0.05em;
+}
+
+.top-section-body {
+  font-family: Inter sans-serif;
+}
+
+.top-section-image {
+  margin-top: 41px;
+  position: relative;
+
+  .triangles {
+    position: absolute;
+    top: 64px;
+    right: -24px;
+  }
+}
+
+.top-section-nav {
+  border-bottom: 2px solid #D6D4D4;
+  width: 44%;
+  display: flex;
+
+  .link {
+    &.margin {
+      margin-left: 11px;
+
+    }
+
+    .hover-indicator {
+      height: 2px;
+      background-color: #B00000;
+      visibility: hidden;
+    }
+
+    a {
+      color: #D6D4D4;
+      text-decoration: none;
+
+      &:hover {
+        color: #B00000;
+      }
+    }
+
+    &:hover {
+      .hover-indicator {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.create-button {
+  color: $white;
+  background-color: #B00000;
+  border-radius: 8px;
+  padding: 15px 16px;
+  border: none;
+  font-family: $font;
+
+  &:hover {
+    box-shadow: 0 0 64px rgba(176, 0, 0, 0.3);
+  }
+
+}
+
+.choose-button {
+  border-radius: 7px;
+  padding: 14px 17px;
+  background-color: $white;
+  font-family: $font;
+  margin-left: 25px;
+
+}
