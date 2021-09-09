@@ -16,6 +16,23 @@ body nav .logo-section {
 }
 body nav .logo-section a {
   margin-left: 63px;
+  color: #000000;
+  text-decoration: none;
+}
+body nav .logo-section .link.margin {
+  margin-left: 11px;
+}
+body nav .logo-section .link .hover-indicator-logo-section {
+  height: 3px;
+  background-color: #B00000;
+  visibility: hidden;
+  margin: 1px 16px 0 77px;
+}
+body nav .logo-section .link a {
+  text-decoration: none;
+}
+body nav .logo-section .link:hover .hover-indicator-logo-section {
+  visibility: visible;
 }
 body nav .about-section {
   display: flex;
@@ -25,6 +42,20 @@ body nav .about-section a {
   text-decoration: none;
   color: #000000;
   margin: 12px;
+}
+body nav .about-section .link.margin {
+  margin-left: 11px;
+}
+body nav .about-section .link .hover-indicator-about-section {
+  height: 3px;
+  background-color: #B00000;
+  visibility: hidden;
+}
+body nav .about-section .link a {
+  text-decoration: none;
+}
+body nav .about-section .link:hover .hover-indicator-about-section {
+  visibility: visible;
 }
 body nav .account-section {
   display: flex;
@@ -118,6 +149,11 @@ body nav .account-section .phone-logo img {
   background-color: #FFFFFF;
   font-family: Poppins;
   margin-left: 25px;
+}
+
+.client-section {
+  display: flex;
+  justify-content: space-around;
 }
 
 /*# sourceMappingURL=styles.css.map */
