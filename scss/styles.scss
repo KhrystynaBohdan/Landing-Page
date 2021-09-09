@@ -209,12 +209,42 @@ body {
 
 .client-section {
   display: flex;
-  justify-content: space-around;
+  padding: 70px 27px 0 27px;
 
   .client-section-content {
-    .client-section-content-title {
+    width: 55%;
 
+    .client-section-content-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 75px;
+      color: #2E2E2E;
     }
+
+    .client-section-content-body {
+      font-size: 18px;
+      line-height: 32px;
+      color: #18191F;
+      padding: 16px 35px 0 0;
+    }
+  }
+
+  .client-section-clients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: 100px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .item {
+    padding: 20px;
+  }
+
+  .item-6 {
+    padding-bottom: 20px;
   }
 }
 
