@@ -226,7 +226,8 @@ body {
       font-size: 18px;
       line-height: 32px;
       color: #18191F;
-      padding: 16px 35px 0 0;
+      padding: 16px 67px 0 0;
+      font-family: Inter;
     }
   }
 
@@ -247,4 +248,37 @@ body {
     padding-bottom: 20px;
   }
 }
+
+.providing-section {
+  .providing-section-container {
+    display: flex;
+    flex-direction: row;
+    padding: 106px 50px 0 50px;
+
+    .providing-section-container-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%;
+      padding: 0 25px;
+    }
+
+    .providing-section-container-block-title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 30px;
+      color: $black;
+      padding: 13px 0 9px 0;
+    }
+
+    .providing-section-container-block-body {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+      color: $black;
+    }
+  }
+}
+
 
