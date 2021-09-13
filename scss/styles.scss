@@ -1,284 +1,214 @@
+@mixin arrow($size, $color, $rotate: 45deg) {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+  transform: rotate($rotate);
+}
+
 $white: #FFFFFF;
 $black: #000000;
 $red: #B00000;
 $light-grey: #D6D4D4;
-$nav-font: 600;
-$fontPoppins: Poppins;
+$dark-grey: #2E2E2E;
+$fontSemiBold: 600;
+$fontPoppins700: 700;
+$fontPoppins: Poppins, Helvetica, Arial, sans-serif;
+$fontInter: Inter, Helvetica, Arial, sans-serif;
 
 body {
   position: relative;
   background: $white;
-  padding: 40px;
   font-family: $fontPoppins;
+}
 
-  nav {
-    font-weight: $nav-font;
-    display: flex;
-    align-items: center;
-    padding: 1px 139px 55px 63px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 112px;
+}
 
-    .logo-section {
-      display: flex;
-      align-items: center;
+.header-block {
+  display: flex;
+  font-family: $fontPoppins;
+  font-weight: $fontSemiBold;
+  color: $black;
+}
 
-      a {
-        margin-left: 63px;
-        color: $black;
-        text-decoration: none;
-      }
+.header-block__link {
+  text-decoration: none;
+  color: $black;
+  padding: 0 20px;
+  position: relative;
 
-      .link {
-        &.margin {
-          margin-left: 11px;
-        }
+  &:hover {
+    color: $red;
 
-        .hover-indicator-logo-section {
-          height: 3px;
-          background-color: $red;
-          visibility: hidden;
-          margin: 1px 16px 0 77px;
-        }
-
-        a {
-          text-decoration: none;
-
-        }
-
-        &:hover {
-          .hover-indicator-logo-section {
-            visibility: visible;
-          }
-        }
-      }
-
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2 * 20px - 2 * 10px);
+      height: 2px;
+      background-color: $red;
     }
+  }
+}
 
-    .about-section {
-      display: flex;
-      margin-left: 123px;
+.logo-section {
+  @extend .header-block;
+  align-items: center;
 
-      a {
-        text-decoration: none;
-        color: $black;
-        margin: 12px;
-      }
+  &__link {
+    @extend .header-block__link;
+  }
+}
 
-      .link {
-        &.margin {
-          margin-left: 11px;
-        }
+.about-section {
+  @extend .header-block;
 
-        .hover-indicator-about-section {
-          height: 3px;
-          background-color: $red;
-          visibility: hidden;
-        }
+  &__link {
+    @extend .header-block__link;
+  }
+}
 
-        a {
-          text-decoration: none;
-        }
+.account-section {
+  @extend .header-block;
+  align-items: center;
 
-        &:hover {
-          .hover-indicator-about-section {
-            visibility: visible;
-          }
-        }
-      }
-    }
+  &__link {
+    @extend .header-block__link;
+  }
 
-    .account-section {
-      display: flex;
-      margin-left: 177px;
+  &__separator {
+    margin-right: 20px;
+    color: $light-grey;
+  }
 
-      a {
-        color: $black;
-        text-decoration: none;
-      }
-
-      .vertical-line {
-        color: #DAD8D8;
-        margin: 0 30px 0 30px;
-      }
-
-      .phone-logo img {
-        margin-right: 5px;
-      }
-    }
+  &__number {
+    margin-left: 8px;
   }
 }
 
 .top-section {
+  padding: 40px 112px;
   display: flex;
-  justify-content: space-around;
-  padding: 0 89px 0 63px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-  .top-section-nav {
-    border-bottom: 2px solid $light-grey;
-    width: 44%;
-    display: flex;
+  &__nav {
+    border-bottom: 1px solid $light-grey; // should be less than "nav" text above
+    display: inline-flex;
+  }
 
-    .link {
-      &.margin {
-        margin-left: 11px;
-      }
+  &__link {
+    text-decoration: none;
+    color: $light-grey;
+    position: relative;
+    font-weight: $fontSemiBold;
 
-      .hover-indicator {
-        height: 2px;
+    margin-bottom: -1px; // to be on same line with border
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    &:first-child {
+      margin-left: -1px;
+    }
+
+    &:last-child {
+      margin-right: -1px;
+    }
+
+    &:hover {
+      color: $red;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 8px);
+        height: 1px;
         background-color: $red;
-        visibility: hidden;
-      }
-
-      a {
-        color: $light-grey;
-        text-decoration: none;
-
-        &:hover {
-          color: $red;
-        }
-      }
-
-      &:hover {
-        .hover-indicator {
-          visibility: visible;
-        }
       }
     }
   }
 
-  .top-section-title {
-    font-style: normal;
-    font-weight: bold;
+  &__content {
+    flex-basis: 100%;
+
+    @media (min-width: 768px) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__title {
+    font-weight: $fontPoppins700;
     font-size: 64px;
     line-height: 75px;
-    color: #2E2E2E;
-    padding-top: 25px;
+    color: $dark-grey;
+    margin-top: 30px;
   }
 
-  .top-section-content {
-    font-size: 15px;
-    line-height: 28px;
+  &__body {
     letter-spacing: 0.05em;
+    font-family: $fontInter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
     color: #808080;
-    margin-right: 150px;
-    padding-top: 24px;
+    margin: 30px 0;
+    width: 64%;
+  }
 
-    .top-section-content-body {
-      padding: 24px 95px 43px 0;
-      letter-spacing: 0.05em;
-      font-family: Inter;
-      font-size: 16px;
+  &__button {
+    border-radius: 8px;
+    padding: 12px 16px; //not sure in top/bottom padding
+    background-color: $white;
+    font-family: $fontPoppins;
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $red;
+      border-color: $red;
+      color: $white;
+      box-shadow: 0 0 64px rgba(176, 0, 0, 0.3);
     }
   }
 
-  .top-section-image {
-    margin-top: 41px;
+  &__image {
     position: relative;
 
-    .triangles {
-      position: absolute;
-      top: 64px;
-      right: -24px;
-    }
-  }
-
-  .top-section-buttons {
-    .create-button {
-      color: $white;
-      background-color: $red;
-      border-radius: 8px;
-      padding: 15px 16px;
-      border: none;
-      font-family: $fontPoppins;
-
-      &:hover {
-        box-shadow: 0 0 64px rgba(176, 0, 0, 0.3);
-      }
-
+    .arrow--first {
+      right: -5%;
+      bottom: 5%;
+      @include arrow(50px, $red);
     }
 
-    .choose-button {
-      border-radius: 7px;
-      padding: 14px 17px;
-      background-color: $white;
-      font-family: $fontPoppins;
-      margin-left: 25px;
+    .arrow--second {
+      left: -5%;
+      top: 60%;
+      @include arrow(25px, $red, 135deg);
+    }
 
+    .arrow--third {
+      right: -5%;
+      top: 15%;
+      @include arrow(25px, $red);
     }
   }
 }
-
-.client-section {
-  display: flex;
-  padding: 70px 27px 0 27px;
-
-  .client-section-content {
-    width: 55%;
-
-    .client-section-content-title {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 48px;
-      line-height: 75px;
-      color: #2E2E2E;
-    }
-
-    .client-section-content-body {
-      font-size: 18px;
-      line-height: 32px;
-      color: #18191F;
-      padding: 16px 67px 0 0;
-      font-family: Inter;
-    }
-  }
-
-  .client-section-clients {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1em;
-    grid-auto-rows: 100px;
-    align-items: center;
-    justify-items: center;
-  }
-
-  .item {
-    padding: 20px;
-  }
-
-  .item-6 {
-    padding-bottom: 20px;
-  }
-}
-
-.providing-section {
-  .providing-section-container {
-    display: flex;
-    flex-direction: row;
-    padding: 106px 50px 0 50px;
-
-    .providing-section-container-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 25%;
-      padding: 0 25px;
-    }
-
-    .providing-section-container-block-title {
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 30px;
-      color: $black;
-      padding: 13px 0 9px 0;
-    }
-
-    .providing-section-container-block-body {
-      font-weight: 300;
-      font-size: 12px;
-      line-height: 18px;
-      text-align: center;
-      color: $black;
-    }
-  }
-}
-
-
