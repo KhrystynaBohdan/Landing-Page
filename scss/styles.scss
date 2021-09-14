@@ -16,6 +16,7 @@ $dark-grey: #2E2E2E;
 $fontSemiBold: 600;
 $fontPoppins: Poppins, Helvetica, Arial, sans-serif;
 $fontInter: Inter, Helvetica, Arial, sans-serif;
+$mediaSize: 1024px;
 
 body {
   position: relative;
@@ -146,9 +147,10 @@ body {
   &__content {
     flex-basis: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: $mediaSize) {
       flex-basis: 50%;
     }
+
   }
 
   &__title {
@@ -216,6 +218,14 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 40px 74px;
+  flex-wrap: wrap;
+
+  &__content {
+    flex-basis: 100%;
+    @media (min-width: $mediaSize) {
+      flex-basis: 50%;
+    }
+  }
 
   &__title {
     font-weight: 800;
@@ -249,12 +259,15 @@ body {
 
 .providing-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 3em;
   align-items: center;
   justify-items: center;
   text-align: center;
   padding: 40px 112px;
+  @media (min-width: $mediaSize) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   &__title {
     font-family: $fontPoppins;
@@ -271,4 +284,3 @@ body {
     line-height: 18px;
   }
 }
-
