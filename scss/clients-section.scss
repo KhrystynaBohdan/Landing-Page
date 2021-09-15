@@ -1,0 +1,46 @@
+.clients-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 74px;
+  flex-wrap: wrap;
+
+  &__content {
+    flex-basis: 100%;
+    @media (min-width: $mediaSize) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    color: #18191F;
+  }
+
+  &__body {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #18191F;
+    padding-top: 18px;
+    width: 92%;
+  }
+
+  &__clients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3em;
+    grid-auto-rows: 74px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__client--last {
+    padding-bottom: 25px;
+  }
+}
+
+.clients-section--nigerian{
+  padding: 40px 140px;
+}

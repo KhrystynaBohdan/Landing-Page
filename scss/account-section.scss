@@ -1,0 +1,17 @@
+.account-section {
+  @extend .header-block;
+  align-items: center;
+
+  &__link {
+    @extend .header-block__link;
+  }
+
+  &__separator {
+    margin-right: 20px;
+    color: $light-grey;
+  }
+
+  &__number {
+    margin-left: 8px;
+  }
+}

@@ -1,0 +1,7 @@
+.about-section {
+  @extend .header-block;
+
+  &__link {
+    @extend .header-block__link;
+  }
+}

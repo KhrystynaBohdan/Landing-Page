@@ -1,0 +1,118 @@
+.top-section {
+  padding: 40px 112px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__nav {
+    border-bottom: 1px solid $light-grey; // should be less than "nav" text above
+    display: inline-flex;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $light-grey;
+    position: relative;
+    font-weight: $fontSemiBold;
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    &:first-child {
+      margin-left: -1px;
+    }
+
+    &:last-child {
+      margin-right: -1px;
+    }
+
+    &:hover {
+      color: $red;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 8px);
+        height: 1px;
+        background-color: $red;
+      }
+    }
+  }
+
+  &__content {
+    flex-basis: 100%;
+
+    @media (min-width: $mediaSize) {
+      flex-basis: 50%;
+    }
+
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    color: $dark-grey;
+    margin-top: 30px;
+  }
+
+  &__body {
+    letter-spacing: 0.05em;
+    font-family: $fontInter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #808080;
+    margin: 40px 0;
+    width: 74%;
+  }
+  &__buttons{
+    padding-top: 20px;
+  }
+  &__button {
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: $white;
+    font-family: $fontPoppins;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $red;
+      border-color: $red;
+      color: $white;
+      box-shadow: 0 0 64px rgba(176, 0, 0, 0.3);
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-top: 16px;
+
+    .arrow--first {
+      right: -5%;
+      bottom: 5%;
+      @include arrow(50px, $red);
+    }
+
+    .arrow--second {
+      left: -5%;
+      top: 60%;
+      @include arrow(25px, $red, 135deg);
+    }
+
+    .arrow--third {
+      right: -5%;
+      top: 15%;
+      @include arrow(25px, $red);
+    }
+  }
+}

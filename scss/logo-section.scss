@@ -1,0 +1,8 @@
+.logo-section {
+  @extend .header-block;
+  align-items: center;
+
+  &__link {
+    @extend .header-block__link;
+  }
+}

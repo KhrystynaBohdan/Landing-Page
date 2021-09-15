@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "sass": "^1.41.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass scss/styles.scss styles.css",
+    "watch": "sass scss/styles.scss styles.css --watch"
   },
   "keywords": [],
   "author": "",

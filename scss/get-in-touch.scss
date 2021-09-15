@@ -1,0 +1,56 @@
+.get_in_touch-section {
+  background: #F7FAFE;
+  border-radius: 16px;
+  position: relative;
+  margin: 80px 100px 0;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 64px;
+    font-family: $fontPoppins;
+    text-align: center;
+    line-height: 88px;
+    font-weight: 600;
+  }
+
+  &__button {
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: $red;
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+    align-self: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid $red;
+    margin-top: 40px;
+    font-size: 14px;
+    &:hover{           //add svg color
+      color:$black;
+      background-color: $white;
+      border: 2px solid $black;
+      cursor: pointer;
+    }
+  }
+
+  .arrow--first {
+    right: -2%;
+    bottom: 0;
+    @include arrow(50px, $red);
+  }
+
+  .arrow--second {
+    left: -2%;
+    top: 72%;
+    @include arrow(30px, $red, 135deg);
+  }
+
+  .arrow--third {
+    left: 36%;
+    top: 0;
+    @include arrow(30px, $red);
+  }
+}

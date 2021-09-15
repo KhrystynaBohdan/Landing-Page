@@ -1,0 +1,191 @@
+.packages-description-section{
+  padding: 65px 172px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-family: $fontPoppins;
+  &__title{
+    font-family: $fontPoppins;
+    font-weight: $fontSemiBold;
+    font-size: 50px;
+    line-height: 60px;
+  }
+  &__choice{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 25px;
+    margin-top: 40px;
+  }
+  &__switch{
+    position: relative;
+    display: inline-block;
+    width: 95px;
+    height: 50px;
+  }
+  &__input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  &__slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $red;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    height: 50px;
+    width: 95px;
+  }
+  &__slider:before{
+    position: absolute;
+    content: "";
+    height: 32px;
+    width: 32px;
+    left: 8px;
+    bottom: 10px;
+    background-color: $white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+
+  &__periods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 60px;
+    margin-left: 120px;
+  }
+
+  &__date {
+    font-size: 24px;
+
+    &--with-label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__discount {
+    font-size: 10px;
+    background-color: #FFE87A;
+    border-radius: 8px;
+    margin-left: 16px;
+    padding: 4px 8px;
+  }
+  &__price{
+    display: flex;
+    padding-top: 70px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    border-bottom: 4px solid $light-grey;
+    width: 78%;
+    margin-left: 122px;
+  }
+
+  &__label {
+    font-family: $fontPoppins; //do extend here
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 40px;
+    width: 50%;
+    position: relative;
+
+    &:hover {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 4px;
+        background-color: $red;
+      }
+    }
+  }
+
+  &__options{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 84px;
+    gap: 100px;
+  }
+
+  &__plan{
+    border: 1.5px solid #C4C4C4;
+    border-radius: 15px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
+    padding: 35px;
+    text-align: left;
+  }
+
+  &__plan-title{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 25px;
+  }
+  &__plan_description{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+  &__plan_price{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 32px;
+    margin-top: 30px;
+  }
+  &__plan_month{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 10px;
+  }
+  &__plan-button{
+    font-family: $fontPoppins; //do extend here
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+    width: 100%;
+    border: 2px solid $black;
+    border-radius: 12px;
+    background: $white;
+    margin-top: 30px;
+    padding: 8px 0;
+  }
+
+  &__properties {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__property{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  &__property_text{
+    font-family: $fontInter; //do extend here
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #808080;
+  }
+}

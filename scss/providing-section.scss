@@ -1,0 +1,27 @@
+.providing-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3em;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding: 64px 112px;
+  @media (min-width: $mediaSize) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__title {
+    font-family: $fontPoppins;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 10px 0;
+  }
+
+  &__body {
+    font-family: $fontPoppins;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

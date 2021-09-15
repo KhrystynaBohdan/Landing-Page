@@ -1,0 +1,92 @@
+.stories-section {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-right: 200px;
+
+  display: grid;
+  grid-template-areas:
+    "title title . ."
+    "title title card1 card1"
+    "subtitle subtitle card1 card1"
+    ". card2 card1 card1"
+    ". card2 card3 ."
+    ". . card3 ."
+    ". . card3 .";
+  grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+  gap: 30px;
+
+  &__quotes {
+    position: absolute;
+    top: -55px;
+    left: -100px;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  &__title {
+    font-family: $fontPoppins;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    grid-area: title;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 32px;
+    grid-area: subtitle;
+  }
+
+  &__card {
+    padding: 20px 32px 20px 64px;
+    box-shadow: 0 10px 20px 0 #29292A12;
+
+    &--1 {
+      grid-area: card1;
+    }
+    &--2 {
+      grid-area: card2;
+
+      // fix
+      .stories-section__card-text {
+        margin-top: -35px;
+      }
+      .stories-section__card-person {
+        padding-bottom: 50px;
+      }
+    }
+    &--3 {
+      grid-area: card3;
+    }
+
+  }
+
+  &__card-logo {}
+  &__card-text {
+    font-size: 16px;
+    font-family: $fontPoppins;
+    line-height: 32px;
+    position: relative;
+  }
+  &__card-person {
+    margin-top: 24px;
+  }
+
+  &__card-person-name {
+    font-weight: 700;
+  }
+
+  &__card-person-position {
+    font-size: 14px;
+    color: #969BAB;
+  }
+
+  &__card-quotes {
+    position: absolute;
+    left: -25px;
+    top: 0;
+    opacity: 0.3;
+  }
+
+}
