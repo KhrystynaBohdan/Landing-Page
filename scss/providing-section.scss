@@ -5,9 +5,20 @@
   align-items: center;
   justify-items: center;
   text-align: center;
-  padding: 64px 112px;
+  padding: 70px 112px;
   @media (min-width: $mediaSize) {
     grid-template-columns: repeat(4, 1fr);
+  }
+  &__block{
+    display: flex;
+    flex-direction: column;
+  }
+  &__circle{
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    background-color: #f3dada;
+    border-radius: 50%;
   }
 
   &__title {

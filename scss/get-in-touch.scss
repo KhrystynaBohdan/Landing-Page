@@ -1,8 +1,8 @@
-.get_in_touch-section {
+.get-in-touch-section {
   background: #F7FAFE;
   border-radius: 16px;
   position: relative;
-  margin: 80px 100px 0;
+  margin: 20px 100px 0;
   padding: 80px 100px;
   display: flex;
   flex-direction: column;
@@ -28,12 +28,16 @@
     border: 2px solid $red;
     margin-top: 40px;
     font-size: 14px;
-    &:hover{           //add svg color
+    &:hover{
       color:$black;
       background-color: $white;
       border: 2px solid $black;
       cursor: pointer;
+     svg path{
+        fill: $black;
+      }
     }
+
   }
 
   .arrow--first {

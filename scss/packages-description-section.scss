@@ -55,6 +55,9 @@
     border-radius: 50%;
   }
 
+  &__input:checked + &__slider:before {
+    transform: translateX(48px);
+  }
 
   &__periods {
     display: flex;
@@ -100,7 +103,9 @@
     position: relative;
 
     &:hover {
+      cursor: pointer;
       &:after {
+        cursor: pointer;
         content: "";
         display: block;
         position: absolute;
@@ -167,6 +172,13 @@
     background: $white;
     margin-top: 30px;
     padding: 8px 0;
+    &:hover{
+      cursor: pointer;
+      background-color: #B00000;
+      border-color: #B00000;
+      color: #FFFFFF;
+      box-shadow: 0 0 64px rgb(176 0 0 / 30%);
+    }
   }
 
   &__properties {
@@ -181,7 +193,7 @@
     align-items: center;
     gap: 24px;
   }
-  &__property_text{
+  &__property-text{
     font-family: $fontInter; //do extend here
     font-weight: 700;
     font-size: 16px;

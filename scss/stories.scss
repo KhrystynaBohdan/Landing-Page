@@ -39,7 +39,7 @@
   }
 
   &__card {
-    padding: 20px 32px 20px 64px;
+    padding: 10px 32px 10px 52px;
     box-shadow: 0 10px 20px 0 #29292A12;
 
     &--1 {
@@ -48,7 +48,7 @@
     &--2 {
       grid-area: card2;
 
-      // fix
+      // picture has margins
       .stories-section__card-text {
         margin-top: -35px;
       }
@@ -80,6 +80,8 @@
   &__card-person-position {
     font-size: 14px;
     color: #969BAB;
+    font-weight: 500;
+    line-height: 24px;
   }
 
   &__card-quotes {
