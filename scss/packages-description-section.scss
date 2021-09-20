@@ -102,7 +102,7 @@
     width: 50%;
     position: relative;
 
-    &:hover {
+    &:hover , &--active{
       cursor: pointer;
       &:after {
         cursor: pointer;

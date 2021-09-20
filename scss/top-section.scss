@@ -28,7 +28,7 @@
       margin-right: -1px;
     }
 
-    &:hover {
+    &:hover, &--active {
       color: $red;
 
       &:after {

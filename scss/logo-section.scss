@@ -4,5 +4,9 @@
 
   &__link {
     @extend .header-block__link;
+
+    &--active {
+      @extend .header-block__link--active;
+    }
   }
 }
