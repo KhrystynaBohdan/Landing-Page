@@ -1,41 +1,29 @@
 $(document).ready(function () {
   $(".top-section__link").click(function () {
-    $(".top-section__link").removeClass("top-section__link--active");
-    $(this).addClass("top-section__link--active");
-
-    const title = ".top-section__title";
-    const body = ".top-section__body";
-
-    switch ($(this).text()) {
-      case "Hosting":
-        $(title).text("Premium Web Hosting for Your Website");
-        $(body).text(
-          "Blazing fast web hosting for individuals and businesses of all sizes backed by 24x7x365 Support."
-        );
-        break;
-      case "Domain":
-        $(title).text("Domain");
-        $(body).text("Domain Description");
-        break;
-      case "SEO":
-        $(title).text("SEO");
-        $(body).text("SEO description");
-        break;
-      case "Email":
-        $(title).text("Email");
-        $(body).text("Premium Email Description");
-        break;
-      default:
-        break;
-    }
+    const topSecLink = "top-section__link";
+    $(`.${topSecLink}`).removeClass(`${topSecLink}--active`);
+    $(this).addClass(`${topSecLink}--active`);
+    $(".services")
+      .hide()
+      .eq($(this).data("nav") - 1)
+      .show();
   });
-  $(".packages-description-section__label").click(function () {
-    $(".packages-description-section__label").removeClass(
-      "packages-description-section__label--active"
-    );
-    $(this).addClass("packages-description-section__label--active");
 
-    const plan_title = ".packages-description-section__plan-title";
+  const prices = {
+    basic: [3, 5, 7],
+    premium: [6, 10, 14],
+  };
+
+  const packDescSection = "packages-description-section";
+
+  $(`.${packDescSection}__label`).click(function () {
+    $(`.${packDescSection}__label`).removeClass(
+      `${packDescSection}__label--active`
+    );
+    $(this).addClass(`${packDescSection}__label--active`);
+
+    const plan_title = `.${packDescSection}__plan-title`;
+    const plan_price = `.${packDescSection}__plan_price`;
 
     switch ($(this).text()) {
       case "Premium":
@@ -44,12 +32,18 @@ $(document).ready(function () {
             $(this).text("Premium " + $(this).text());
           }
         });
+        $(plan_price).each(function (i) {
+          $(this).text(prices.premium[i]);
+        });
         break;
       case "Basic":
         $(plan_title).each(function () {
           if ($(this).text().includes("Premium")) {
             $(this).text($(this).text().replace("Premium", ""));
           }
+        });
+        $(plan_price).each(function (i) {
+          $(this).text(prices.basic[i]);
         });
         break;
       default:

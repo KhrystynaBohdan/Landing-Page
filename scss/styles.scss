@@ -18,3 +18,9 @@ body {
   background: $white;
   font-family: $fontPoppins;
 }
+.services {
+  display: none;
+  &:first-child {
+    display: block;
+  }
+}
